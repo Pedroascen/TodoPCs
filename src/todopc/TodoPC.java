@@ -10,13 +10,17 @@ public class TodoPC {
     public static void main(String[] args) {
         
         //Instancia de Objetos y guardar en ArrayList
+    	//AddListEquipo objDesktop = new AddListEquipo();
+    	
+    	//implementacion de metodos
+    	//objDesktop.addDesktop();
+    	//objDesktop.getDesktop();
+    	
         
         //Agregar Menu de Opciones y unir la parte logica
         
         
         //Validar Datos no permitir nulos
-        
-        
         
         //Codigo de ejemplo
         Equipo Dell,HP,Samsumg = new Equipo();
