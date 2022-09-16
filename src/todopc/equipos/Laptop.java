@@ -19,7 +19,7 @@ public class Laptop extends Equipo{
     //Metodo de prueba
      public void VerMensaje(){
         super.VerMensaje();
-        System.out.println("El tamanio de pantalla es: "+tamanioPantalla+" y tengo "+memoria+" de RAM");
+        System.out.println("LAPTOP\nEl fabricante es: "+fabricante + ", el modelo es: "+modelo +  ", el microprocesador es "+microProce+", la capacidad de disco duro es "+capacDiskDuro+", tamaño de pantalla es: "+tamanioPantalla+" y tengo "+memoria+" de RAM");
     }
     //getters y setters
     public String getTamanioPantalla(){

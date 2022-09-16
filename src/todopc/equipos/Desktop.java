@@ -17,7 +17,7 @@ public class Desktop extends Equipo{
     //metodo de prueba
     public void VerMensaje(){
         super.VerMensaje();
-        System.out.println("La targeta grafica es: "+tarjGrafica +" y tengo "+memoria+" de RAM");
+        System.out.println("DESKTOP \nEl fabricante es: "+fabricante + ", el modelo es: "+modelo +  ", el microprocesador es "+microProce+", la capacidad de disco duro es "+capacDiskDuro+", la tarjeta gráfica es: "+tarjGrafica +" y tiene "+memoria+" de RAM con una torre tamaño "+tamanioTorre+"");
     }
     
     //getters y setters
@@ -28,6 +28,7 @@ public class Desktop extends Equipo{
     public void setTatjGrafica(String tarjGrafica){
         this.tarjGrafica = tarjGrafica;
     }
+    
     public String getTamanioTorre(){
         return tamanioTorre;
     }

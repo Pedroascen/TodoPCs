@@ -23,7 +23,7 @@ public class Tablet extends Equipo{
     //Metodo de prueba
     public void VerMensaje(){
         super.VerMensaje();
-        System.out.println("El tamanio diagonal de pantalla es: "+longDiagPantalla+" y tengo "+memoriaNand+" de memoria NAND");
+        System.out.println("TABLET \nEl fabricante es: "+fabricante+ ", el modelo es: "+modelo+  ",el microprocesador es "+microProce+ ", el tamaño diagonal de pantalla es: "+longDiagPantalla+", tiene "+memoriaNand+" de memoria NAND y usa el sistema operativo "+tipoSO+" ");
     }
     //getters y setters
     public String getLongDiagPantalla(){

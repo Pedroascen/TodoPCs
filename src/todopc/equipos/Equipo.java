@@ -26,7 +26,7 @@ public class Equipo {
     }
     //mensaje de prueba
     public void VerMensaje(){
-        System.out.print("Soy un equipo: ");
+        System.out.print("Especificaciones del Equipo: \n");
     }
     
     //getters y setters
