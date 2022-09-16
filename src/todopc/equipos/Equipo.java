@@ -17,6 +17,7 @@ public class Equipo {
         this.modelo = modelo;
         this.microProce = microProce;
         this.memoria = memoria;
+        this.capacDiskDuro=capacDiskDuro;
     }
     
     public Equipo(String fabricante, String modelo,String microProce){

@@ -75,8 +75,6 @@ public class AddListEquipo {
 		for(int i=0; i<listequipo1.size(); i++) {
 			laptop.VerMensaje();
 		}
-               
-                
 	}
         
         //Tablet

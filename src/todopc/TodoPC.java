@@ -16,11 +16,11 @@ public class TodoPC {
         objDesktop.addDesktop();
         objDesktop.getDesktop();
         //Laptop
-        objLaptop.addLaptop();
-        objLaptop.getLaptop();
+        //objLaptop.addLaptop();
+        //objLaptop.getLaptop();
         //Tablet
-        objTablet.addTablet();
-        objTablet.getTablet();
+        //objTablet.addTablet();
+        //objTablet.getTablet();
     	
         
         //Agregar Menu de Opciones y unir la parte logica
