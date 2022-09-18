@@ -1,112 +1,160 @@
 package todopc;
 
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import todopc.equipos.Desktop;
 import todopc.equipos.Laptop;
 import todopc.equipos.Tablet;
 
 public class AddListEquipo {
-	//instancia de clase Equipo
+	// instancia de objetos tipo Equipo
 	Desktop desktop = new Desktop();
-        Laptop laptop = new Laptop();
-        Tablet tablet = new Tablet();
-        
-	//Arreglo para equipos 
-	ArrayList<Desktop> listequipo = new ArrayList();
-        ArrayList<Laptop> listequipo1 = new ArrayList();
-        ArrayList<Tablet> listequipo2 = new ArrayList();
-        
-	
-	//Metodo para el option Pane
-	public String Input(String text) {
-		return JOptionPane.showInputDialog(text);
-	}
-	
-        //Desktop
-	//Método para guardar objeto
+	Laptop laptop = new Laptop();
+	Tablet tablet = new Tablet();
+
+	// Arreglo para almacenar objetos
+	ArrayList<Desktop> listDesktop = new ArrayList<Desktop>();
+	ArrayList<Laptop> listLaptop = new ArrayList<Laptop>();
+	ArrayList<Tablet> listTablet = new ArrayList<Tablet>();
+
+	// Desktop
+	// Método para guardar objeto
 	public void addDesktop() {
-                String fabricante = Input("Ingrese el fabricante del equipo Desktop");
-                String modelo = Input("Ingrese el modelo del equipo Desktop");
-                String microProce = Input("Ingrese el microproceador del equipo Desktop");
-                String capacDiskDuro = Input("Ingrese la capacidad de disco duro del equipo Desktop");
-                String memoria = Input("Ingrese la memoria RAM del equipo Desktop:");
-		String tarjGrafica = Input("Ingrese la tarjeta gráfica de la Desktop:");
-		String tamanioTorre = Input("Ingrese el tamaño de la Torre del equipo Desktop");
-		
-		//Se insertan los datos en el objeto desktop
-                desktop.setFabricante(fabricante);
-                desktop.setModelo(modelo);
-                desktop.setMicroProce(microProce);
-                desktop.setCapacDiskDuro(capacDiskDuro);
-		desktop.setTatjGrafica(tarjGrafica);
-		desktop.setMemoria(memoria);
-                desktop.setTamanioTorre(tamanioTorre);
-		listequipo.add(desktop);
+		// Instancia a la clase Desktop
+		Desktop desktop = new Desktop();
+		// instancia a la clase JFrame
+		JFrame frame = new JFrame("Registrar Desktop");
+		//
+		JTextField fabricante = new JTextField(10);
+		JTextField modelo = new JTextField(10);
+		JTextField microProce = new JTextField(10);
+		JTextField capacDiskDuro = new JTextField(10);
+		JTextField memoria = new JTextField(10);
+		JTextField tarjGrafica = new JTextField(10);
+		JTextField tamanioTorre = new JTextField(11);
+
+		// labels del formulario
+		Object[] msg = { "Frabricante:", fabricante, "Modelo:", modelo, "Microprocesador:", microProce, "Memoria:",
+				memoria, "Tarjeta gráfica:", tarjGrafica, "Tamaño de torre:", tamanioTorre, "Capacidad de disco duro:",
+				capacDiskDuro };
+
+		JOptionPane.showConfirmDialog(frame, msg, "Registrar Desktop", JOptionPane.PLAIN_MESSAGE);
+
+		// Se insertan los datos en el objeto desktop
+		desktop.setFabricante(fabricante.getText());
+		desktop.setModelo(modelo.getText());
+		desktop.setMicroProce(microProce.getText());
+		desktop.setCapacDiskDuro(capacDiskDuro.getText());
+		desktop.setTatjGrafica(tarjGrafica.getText());
+		desktop.setMemoria(memoria.getText());
+		desktop.setTamanioTorre(tamanioTorre.getText());
+		listDesktop.add(desktop);
 	}
-	//Método para mostrar
-	public void getDesktop() {
-		for(int i=0; i<listequipo.size(); i++) {
-			desktop.VerMensaje();
+
+	// Método para mostrar
+	public String getDesktopInfo() {
+		String mensaje = "";
+
+		for (int i = 0; i < listDesktop.size(); i++) {
+			Desktop info = listDesktop.get(i);
+			mensaje += "DESKTOP \n Fabricante: " + info.getFabricante() + "\n Modelo: " + info.getModelo()
+					+ "\n Microprocesador: " + info.getMicroProce() + "\n Memoria: " + info.getMemoria()
+					+ "\n Tarjeta gráfica: " + info.getTarjGrafica() + "\n Tamaño de torre: " + info.getTamanioTorre()
+					+ "\n Capacidad de disco duro: " + info.getCapacDiskDuro() + "\n \n";
 		}
-        }
-               
-	//Laptop
-	//Método para guardar objeto
+
+		return mensaje;
+	}
+
+	// Laptop
+	// Método para guardar objeto
 	public void addLaptop() {
-                String fabricante = Input("Ingrese el fabricante de la Laptop");
-                String modelo = Input("Ingrese el modelo de la Laptop");
-                String microProce = Input("Ingrese el microproceador de la Laptop");
-                String capacDiskDuro = Input("Ingrese la capacidad de disco duro de la Laptop");
-		String tamanioPantalla = Input("Ingrese el tamaño de la pantalla de la laptop:");
-		String memoria = Input("Ingrese la memoria RAM de la Laptop:");
-		
-		//se insertan los datos en el objeto laptop
-                laptop.setFabricante(fabricante);
-                laptop.setModelo(modelo);
-                laptop.setMicroProce(microProce);
-                laptop.setCapacDiskDuro(capacDiskDuro);
-		laptop.setTamanioPantall(tamanioPantalla);
-		laptop.setMemoria(memoria);
-		listequipo1.add(laptop);
+		Laptop laptop = new Laptop();
+
+		JFrame frame = new JFrame("Registrar Laptop");
+
+		JTextField fabricante = new JTextField(10);
+		JTextField modelo = new JTextField(10);
+		JTextField microProce = new JTextField(10);
+		JTextField memoria = new JTextField(10);
+		JTextField tamanioPantalla = new JTextField(10);
+		JTextField capacDiskDuro = new JTextField(10);
+
+		Object[] msg = { "Fabricante:", fabricante, "Modelo:", modelo, "Microprocesador:", microProce, "Memoria:",
+				memoria, "Tamaño pantalla:", tamanioPantalla, "Capacidad de disco duro:", capacDiskDuro, };
+
+		JOptionPane.showConfirmDialog(frame, msg, "Registrar Laptop", JOptionPane.PLAIN_MESSAGE);
+
+		// se insertan los datos en el objeto laptop
+		laptop.setFabricante(fabricante.getText());
+		laptop.setModelo(modelo.getText());
+		laptop.setMicroProce(microProce.getText());
+		laptop.setCapacDiskDuro(capacDiskDuro.getText());
+		laptop.setTamanioPantall(tamanioPantalla.getText());
+		laptop.setMemoria(memoria.getText());
+		listLaptop.add(laptop);
 	}
-	//Método para mostrar
-	public void getLaptop() {
-		for(int i=0; i<listequipo1.size(); i++) {
-			laptop.VerMensaje();
+
+	// Método para mostrar
+	public String getLaptopInfo() {
+		String mensaje = "";
+
+		for (int i = 0; i < listLaptop.size(); i++) {
+			Laptop info = listLaptop.get(i);
+			mensaje += "LAPTOP\n Fabricante: " + info.getFabricante() + "\n Modelo: " + info.getModelo()
+					+ "\n Microprocesador: " + info.getMicroProce() + "\n Memoria: " + info.getMemoria()
+					+ "\n Tamaño pantalla: " + info.getTamanioPantalla() + "\n Capacidad de disco duro: "
+					+ info.getCapacDiskDuro() + "\n \n";
 		}
+		return mensaje;
 	}
-        
-        //Tablet
-        //Método para guardar objeto
-        public void addTablet(){
-                String fabricante = Input("Ingrese el fabricante de la Tablet");
-                String modelo = Input("Ingrese el modelo de la Laptop");
-                String microProce = Input("Ingrese el microproceador de la Tablet");
-                String longDiagPantalla = Input("Inrgese el tamaño de la pantalla de la Tablet");
-                String memoriaNand = Input("Ingrese la memoria NAND de la Tablet");
-                String tipoPantalla = Input ("Ingrese el tamaño diagonal de la pantalla de la Tablet");
-                String tipoSO = Input ("Ingrese el Sistema Operativo de la Tablet");
-                
-                //Se insertan los datos en el objeto tablet
-                tablet.setFabricante(fabricante);
-                tablet.setModelo(modelo);
-                tablet.setMicroProce(microProce);
-                tablet.setLongDiagPantalla(longDiagPantalla);
-                tablet.setTipoPantalla(tipoPantalla);
-                tablet.setMemoriaNand(memoriaNand);
-                tablet.setTipoSo(tipoSO);
-                listequipo2.add(tablet);
-            
-        }
-        //Método para mostrar
-        public void getTablet(){
-                for(int i=0; i<listequipo2.size(); i++) {
-                        tablet.VerMensaje();
-                }
-        }
-        
-        
-        
-        
+
+	// Tablet
+	// Método para guardar objeto
+	public void addTablet() {
+		Tablet tablet = new Tablet();
+
+		JFrame frame = new JFrame("Registrar Tablet");
+
+		JTextField fabricante = new JTextField(10);
+		JTextField modelo = new JTextField(10);
+		JTextField microProce = new JTextField(10);
+		JTextField longDiagPantalla = new JTextField(10);
+		JTextField tipoPantalla = new JTextField(10);
+		JTextField memoriaNand = new JTextField(10);
+		JTextField tipoSO = new JTextField(10);
+
+		Object[] msg = { "Fabricante:", fabricante, "Modelo:", modelo, "Microprocesador:", microProce,
+				"Tamaño diagonal de pantalla:", longDiagPantalla, "¿Capacitiva/Resistiva?", tipoPantalla,
+				"Tamaño memoria NAND:", memoriaNand, "Sistema Operativo:", tipoSO };
+
+		JOptionPane.showConfirmDialog(frame, msg, "Registrar Tablet", JOptionPane.PLAIN_MESSAGE);
+
+		// Se insertan los datos en el objeto tablet
+		tablet.setFabricante(fabricante.getText());
+		tablet.setModelo(modelo.getText());
+		tablet.setMicroProce(microProce.getText());
+		tablet.setLongDiagPantalla(longDiagPantalla.getText());
+		tablet.setTipoPantalla(tipoPantalla.getText());
+		tablet.setMemoriaNand(memoriaNand.getText());
+		tablet.setTipoSo(tipoSO.getText());
+		listTablet.add(tablet);
+	}
+
+	// Método para mostrar
+	public String getTabletInfo() {
+		String mensaje = "";
+
+		for (int i = 0; i < listTablet.size(); i++) {
+			Tablet info = listTablet.get(i);
+			mensaje += "TABLETS \n Fabricante: " + info.getFabricante() + "\n Modelo: " + info.getModelo()
+					+ "\n Microprocesador: " + info.getMicroProce() + "\n Tamaño diagonal de pantalla: "
+					+ info.getLongDiagPantalla() + "\n ¿Capacitiva/Resistiva?: " + info.getTipoPantalla()
+					+ "\n Tamaño memoria NAND: " + info.getMemoriaNand() + "\n Sistema Operativo: " + info.getTipoSo()
+					+ " \n \n";
+		}
+		return mensaje;
+	}
 }
