@@ -15,22 +15,22 @@ public class TodoPC {
         
         //Menú principal 
         do{
-            opcion=Byte.parseByte(JOptionPane.showInputDialog(
-            "TODOPC: MENU PRINCIPAL\n \n"          
+            opcion=Byte.parseByte(JOptionPane.showInputDialog(null,
+            "TODOPC:  MENU PRINCIPAL\n \n"          
           + "1. Registrar equipo\n"
           + "2. Ver equipos\n"
           + "3. Salir\n \n"                    
-          + "Por favor, seleccione una opción."));
+          + "Por favor, seleccione una opción.",null, JOptionPane.PLAIN_MESSAGE));
             
             switch(opcion) {
                 case 1:
                     //Menú Registrar equipo
-                    byte opcion1 = Byte.parseByte(JOptionPane.showInputDialog(
+                    byte opcion1 = Byte.parseByte(JOptionPane.showInputDialog(null,
                         "TODOPC: Registrar equipo\n \n"          
                       + "1. Desktops\n"
                       + "2. Laptops\n"
                       + "3. Tablets\n \n"                    
-                      + "Por favor, seleccione una opción."));
+                      + "Por favor, seleccione una opción.",null, JOptionPane.PLAIN_MESSAGE));
                         switch(opcion1) {
                             case 1:
                                 objDesktop.addDesktop();
@@ -50,27 +50,27 @@ public class TodoPC {
                     
                 case 2:
                     //Menú Ver equipos
-                    byte opcion2 = Byte.parseByte(JOptionPane.showInputDialog(
+                    byte opcion2 = Byte.parseByte(JOptionPane.showInputDialog(null,
                         "TODOPC: Ver equipos\n \n"          
                       + "1. Desktops\n"
                       + "2. Laptops\n"
                       + "3. Tablets\n \n"                    
-                      + "Por favor, seleccione una opción."));
+                      + "Por favor, seleccione una opción.",null, JOptionPane.PLAIN_MESSAGE));
                         switch(opcion2) {
                             case 1:
                                 String desktopresult = objDesktop.getDesktopInfo();
-                                JOptionPane.showMessageDialog(null, desktopresult);
+                                JOptionPane.showMessageDialog(null, desktopresult,null, JOptionPane.PLAIN_MESSAGE);
                                 break;
                             case 2: 
                                 String laptopresult = objLaptop.getLaptopInfo();
-                                JOptionPane.showMessageDialog(null, laptopresult);
+                                JOptionPane.showMessageDialog(null, laptopresult,null, JOptionPane.PLAIN_MESSAGE);
                                 break;
                             case 3: 
                                 String tabletresult = objTablet.getTabletInfo();
-                                JOptionPane.showMessageDialog(null, tabletresult);
+                                JOptionPane.showMessageDialog(null, tabletresult,null, JOptionPane.PLAIN_MESSAGE);
                                 break;
                             default:
-                                JOptionPane.showMessageDialog(null, "Opción inválida.");
+                                JOptionPane.showMessageDialog(null, "Opción inválida.",null, JOptionPane.PLAIN_MESSAGE);
                                 break;
                     }
                     
@@ -86,9 +86,5 @@ public class TodoPC {
         
         }while(opcion!=3);
         System.exit(0);
-        
-        //Validar Datos no permitir nulos
-            	
-        
     }
 }

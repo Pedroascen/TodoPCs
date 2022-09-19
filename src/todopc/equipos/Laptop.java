@@ -5,28 +5,35 @@
  */
 package todopc.equipos;
 
-public class Laptop extends Equipo{
-    //atributos
-    private String tamanioPantalla;
-    
-    //Constructores
-    public Laptop(){
-    }
-    public Laptop(String fabricante, String modelo, String microProce, String memoria, String tamanioPantalla, String capacDiskDuro){
-        super(fabricante,modelo,microProce,memoria,capacDiskDuro);
-        this.tamanioPantalla = tamanioPantalla;   
-    }
-    //Metodo de prueba
-     public void VerMensaje(){
-        super.VerMensaje();
-        System.out.println("LAPTOP\nEl fabricante es: "+fabricante + ", el modelo es: "+modelo +  ", el microprocesador es "+microProce+", la capacidad de disco duro es "+capacDiskDuro+", tamaño de pantalla es: "+tamanioPantalla+" y tengo "+memoria+" de RAM");
-    }
-    //getters y setters
-    public String getTamanioPantalla(){
-        return tamanioPantalla;
-    }
-    
-    public void setTamanioPantall(String tamanioPantalla){
-        this.tamanioPantalla = tamanioPantalla;
-    }
+
+public class Laptop extends Equipo {
+	// atributos
+	private String tamanioPantalla;
+
+	// Constructores
+	public Laptop() {
+	}
+
+	public Laptop(String fabricante, String modelo, String microProce, String memoria, String tamanioPantalla,
+			String capacDiskDuro) {
+		super(fabricante, modelo, microProce, memoria, capacDiskDuro);
+		this.tamanioPantalla = tamanioPantalla;
+	}
+
+	// Metodo de prueba
+	public void VerMensaje() {
+		super.VerMensaje();
+		System.out.println("LAPTOP\nEl fabricante es: " + fabricante + ", el modelo es: " + modelo
+				+ ", el microprocesador es " + microProce + ", la capacidad de disco duro es " + capacDiskDuro
+				+ ", tamaño de pantalla es: " + tamanioPantalla + " y tengo " + memoria + " de RAM");
+	}
+
+	// getters y setters
+	public String getTamanioPantalla() {
+		return tamanioPantalla;
+	}
+
+	public void setTamanioPantall(String tamanioPantalla) {
+		this.tamanioPantalla = tamanioPantalla;
+	}
 }

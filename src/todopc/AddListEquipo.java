@@ -9,10 +9,6 @@ import todopc.equipos.Laptop;
 import todopc.equipos.Tablet;
 
 public class AddListEquipo {
-	// instancia de objetos tipo Equipo
-	Desktop desktop = new Desktop();
-	Laptop laptop = new Laptop();
-	Tablet tablet = new Tablet();
 
 	// Arreglo para almacenar objetos
 	ArrayList<Desktop> listDesktop = new ArrayList<Desktop>();
@@ -25,7 +21,7 @@ public class AddListEquipo {
 		// Instancia a la clase Desktop
 		Desktop desktop = new Desktop();
 		// instancia a la clase JFrame
-		JFrame frame = new JFrame("Registrar Desktop");
+		JFrame frame = new JFrame();
 		//
 		JTextField fabricante = new JTextField(10);
 		JTextField modelo = new JTextField(10);
@@ -33,15 +29,14 @@ public class AddListEquipo {
 		JTextField capacDiskDuro = new JTextField(10);
 		JTextField memoria = new JTextField(10);
 		JTextField tarjGrafica = new JTextField(10);
-		JTextField tamanioTorre = new JTextField(11);
+		JTextField tamanioTorre = new JTextField(10);
 
 		// labels del formulario
 		Object[] msg = { "Frabricante:", fabricante, "Modelo:", modelo, "Microprocesador:", microProce, "Memoria:",
 				memoria, "Tarjeta gráfica:", tarjGrafica, "Tamaño de torre:", tamanioTorre, "Capacidad de disco duro:",
 				capacDiskDuro };
 
-		JOptionPane.showConfirmDialog(frame, msg, "Registrar Desktop", JOptionPane.PLAIN_MESSAGE);
-
+		JOptionPane.showConfirmDialog(frame, msg, "Registrar Desktop",JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 		// Se insertan los datos en el objeto desktop
 		desktop.setFabricante(fabricante.getText());
 		desktop.setModelo(modelo.getText());
@@ -64,7 +59,6 @@ public class AddListEquipo {
 					+ "\n Tarjeta gráfica: " + info.getTarjGrafica() + "\n Tamaño de torre: " + info.getTamanioTorre()
 					+ "\n Capacidad de disco duro: " + info.getCapacDiskDuro() + "\n \n";
 		}
-
 		return mensaje;
 	}
 
@@ -85,10 +79,10 @@ public class AddListEquipo {
 		Object[] msg = { "Fabricante:", fabricante, "Modelo:", modelo, "Microprocesador:", microProce, "Memoria:",
 				memoria, "Tamaño pantalla:", tamanioPantalla, "Capacidad de disco duro:", capacDiskDuro, };
 
-		JOptionPane.showConfirmDialog(frame, msg, "Registrar Laptop", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showConfirmDialog(frame, msg, "Registrar Laptop", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 
 		// se insertan los datos en el objeto laptop
-		laptop.setFabricante(fabricante.getText());
+        laptop.setFabricante(fabricante.getText());
 		laptop.setModelo(modelo.getText());
 		laptop.setMicroProce(microProce.getText());
 		laptop.setCapacDiskDuro(capacDiskDuro.getText());
@@ -130,7 +124,7 @@ public class AddListEquipo {
 				"Tamaño diagonal de pantalla:", longDiagPantalla, "¿Capacitiva/Resistiva?", tipoPantalla,
 				"Tamaño memoria NAND:", memoriaNand, "Sistema Operativo:", tipoSO };
 
-		JOptionPane.showConfirmDialog(frame, msg, "Registrar Tablet", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showConfirmDialog(frame, msg, "Registrar Tablet", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 
 		// Se insertan los datos en el objeto tablet
 		tablet.setFabricante(fabricante.getText());
